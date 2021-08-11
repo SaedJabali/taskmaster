@@ -17,16 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="296dp"
-        android:layout_height="513dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/tasks_image_placeholder"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/List_tasks"
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toTopOf="@+id/userTasksLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myTasks"
-        tools:srcCompat="@tools:sample/avatars[1]" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/allTasksButton"
