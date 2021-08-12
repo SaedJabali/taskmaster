@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         taskList.add(new Task("Task 3","do lab work for today","in progress"));
         taskList.add(new Task("Task 4","visit family","complete"));
 
-        adapter = new TaskAdapter(taskList, new TaskAdapter.OnFoodItemClickListener() {
+        adapter = new TaskAdapter(taskList, new TaskAdapter.OnTaskClickListener() {
             @Override
             public void onItemClicked(int position) {
                 Intent goToDetailsIntent = new Intent(getApplicationContext(), TaskDetail.class);
