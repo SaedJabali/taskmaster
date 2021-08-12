@@ -13,14 +13,14 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
 
     private final List<Task> taskItems;
-    private OnFoodItemClickListener listener;
+    private OnTaskClickListener listener;
 
-    public TaskAdapter(List<Task> foodItems, OnFoodItemClickListener listener) {
-        this.taskItems = foodItems;
+    public TaskAdapter(List<Task> taskItems, OnTaskClickListener listener) {
+        this.taskItems = taskItems;
         this.listener = listener;
     }
 
-    public interface OnFoodItemClickListener {
+    public interface OnTaskClickListener {
         void onItemClicked(int position);
         void onDeleteItem(int position);
     }
@@ -51,7 +51,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
         private TextView body;
         private TextView status;
 
-        ViewHolder(@NonNull View itemView, OnFoodItemClickListener listener) {
+        ViewHolder(@NonNull View itemView, OnTaskClickListener listener) {
             super(itemView);
 
             title = itemView.findViewById(R.id.title_label);
