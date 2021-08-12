@@ -41,7 +41,9 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="sans-serif-condensed-medium"
+        />
 
     <EditText
         android:id="@+id/newTaskName"
@@ -84,14 +86,45 @@
         app:layout_constraintTop_toBottomOf="@+id/taskBodyLabel"
         android:importantForAutofill="no" />
 
+
+    <EditText
+        android:id="@+id/newStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newStatusLabel"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/newStatusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:labelFor="@id/newTaskName"
+        android:text="@string/status"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/newTaskSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newTaskBody"
+        app:layout_constraintVertical_bias="0.153" />
+
     <Button
         android:id="@+id/newTaskSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="56dp"
         android:text="@string/create_new_task"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newTaskBody" />
+        app:layout_constraintTop_toBottomOf="@+id/newStatus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

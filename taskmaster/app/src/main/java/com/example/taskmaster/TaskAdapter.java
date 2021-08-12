@@ -13,7 +13,7 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
 
     private final List<Task> taskItems;
-    private OnTaskClickListener listener;
+    private final OnTaskClickListener listener;
 
     public TaskAdapter(List<Task> taskItems, OnTaskClickListener listener) {
         this.taskItems = taskItems;
@@ -23,6 +23,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
     public interface OnTaskClickListener {
         void onItemClicked(int position);
         void onDeleteItem(int position);
+        void onUpdateItem(int position);
     }
 
     @NonNull
@@ -47,9 +48,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView title;
-        private TextView body;
-        private TextView status;
+        private final TextView title;
+        private final TextView body;
+        private final TextView status;
 
         ViewHolder(@NonNull View itemView, OnTaskClickListener listener) {
             super(itemView);
@@ -64,6 +65,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>{
                     listener.onItemClicked(getAdapterPosition());
                 }
             });
+//            delete.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    listener.onDeleteItem(getAdapterPosition());
+//                }
+//            });
         }
     }
 }
